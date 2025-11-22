@@ -1,0 +1,22 @@
+﻿# ignore big datasets and videos
+# big data
+datasets/
+test vids/
+
+# model weights / checkpoints
+training/pretrained/
+*.pth
+*.pt
+*.onnx
+
+# videos
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# misc big archives
+*.zip
+*.rar
+
+datasets/lmdb/UADFV_lmdb/data.mdb

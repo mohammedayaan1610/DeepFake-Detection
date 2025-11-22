@@ -1,0 +1,115 @@
+2025-09-03 00:36:26,738 - ERROR - Dataset path does not exist: C:\ml df project\DeepfakeBench\datasets\rgb\UADFV\UADFV
+2025-09-03 00:40:57,636 - ERROR - No videos found in C:\ml df project\DeepfakeBench\datasets\rgb\UADFV\fake
+2025-09-03 01:45:08,521 - ERROR - Dataset path does not exist: C:\ml df project\DeepfakeBench\datasets\UADFV\UADFV
+2025-09-03 01:47:36,395 - ERROR - No videos found in C:\ml df project\DeepfakeBench\datasets\UADFV\fake
+2025-10-09 20:30:35,390 - ERROR - No videos found in C:\ml df project\DeepfakeBench\datasets\UADFV\fake
+2025-10-28 21:14:42,686 - ERROR - Dataset path does not exist: C:\ml df project\DeepfakeBench\datasets\WebcamDF\UADFV
+2025-10-28 21:24:07,486 - INFO - 4 videos found in C:\ml df project\DeepfakeBench\datasets\UADFV\fake
+2025-10-28 21:24:07,886 - ERROR - Predictor path does not exist: ./dlib_tools/shape_predictor_81_face_landmarks.dat
+2025-10-28 21:24:08,674 - ERROR - Predictor path does not exist: ./dlib_tools/shape_predictor_81_face_landmarks.dat
+2025-10-28 21:24:09,071 - ERROR - Predictor path does not exist: ./dlib_tools/shape_predictor_81_face_landmarks.dat
+2025-10-28 21:24:09,072 - ERROR - Predictor path does not exist: ./dlib_tools/shape_predictor_81_face_landmarks.dat
+2025-10-28 21:24:09,096 - INFO - Current time: 2025-10-28 21:24:09
+2025-10-28 21:25:51,578 - INFO - 4 videos found in C:\ml df project\DeepfakeBench\datasets\UADFV\fake
+2025-10-28 21:25:54,788 - WARNING - No faces in frame 0 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:54,984 - WARNING - No faces in frame 7 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:55,160 - WARNING - No faces in frame 15 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:55,362 - WARNING - No faces in frame 23 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:55,559 - WARNING - No faces in frame 30 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:55,759 - WARNING - No faces in frame 38 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:55,968 - WARNING - No faces in frame 46 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:56,156 - WARNING - No faces in frame 53 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:56,326 - WARNING - No faces in frame 61 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:56,526 - WARNING - No faces in frame 69 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:56,710 - WARNING - No faces in frame 77 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:56,925 - WARNING - No faces in frame 84 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:57,126 - WARNING - No faces in frame 92 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:57,343 - WARNING - No faces in frame 100 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:57,563 - WARNING - No faces in frame 107 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:57,766 - WARNING - No faces in frame 115 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:57,945 - WARNING - No faces in frame 123 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:57,982 - WARNING - No faces in frame 25 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:58,128 - WARNING - No faces in frame 131 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:58,245 - WARNING - No faces in frame 28 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:58,374 - WARNING - No faces in frame 138 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:58,505 - WARNING - No faces in frame 30 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:58,588 - WARNING - No faces in frame 146 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:58,748 - WARNING - No faces in frame 33 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:58,776 - WARNING - No faces in frame 154 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:58,971 - WARNING - No faces in frame 161 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:58,980 - WARNING - No faces in frame 36 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:59,168 - WARNING - No faces in frame 169 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:59,299 - WARNING - No faces in frame 39 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:59,347 - WARNING - No faces in frame 177 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:59,534 - WARNING - No faces in frame 42 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:59,554 - WARNING - No faces in frame 185 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:59,796 - WARNING - No faces in frame 192 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:25:59,828 - WARNING - No faces in frame 44 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:25:59,977 - WARNING - No faces in frame 200 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:26:00,068 - WARNING - No faces in frame 47 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:00,158 - WARNING - No faces in frame 208 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:26:00,299 - WARNING - No faces in frame 50 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:00,340 - WARNING - No faces in frame 215 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:26:00,568 - WARNING - No faces in frame 223 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:26:00,645 - WARNING - No faces in frame 53 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:00,761 - WARNING - No faces in frame 231 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:26:00,898 - WARNING - No faces in frame 56 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:00,979 - WARNING - No faces in frame 239 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_002.mp4
+2025-10-28 21:26:00,995 - INFO - Current time: 2025-10-28 21:26:00
+2025-10-28 21:26:02,152 - WARNING - No faces in frame 67 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:02,684 - WARNING - No faces in frame 72 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:02,963 - WARNING - No faces in frame 75 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:03,225 - WARNING - No faces in frame 78 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:03,502 - WARNING - No faces in frame 81 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:04,130 - WARNING - No faces in frame 87 of C:\ml df project\DeepfakeBench\datasets\UADFV\fake\fake_003.mp4
+2025-10-28 21:26:04,142 - INFO - Current time: 2025-10-28 21:26:04
+2025-10-28 21:26:05,347 - INFO - Current time: 2025-10-28 21:26:05
+2025-10-28 21:26:08,679 - INFO - Current time: 2025-10-28 21:26:08
+2025-10-28 21:26:08,680 - INFO - Total time taken: 0.28 minutes
+2025-10-28 21:26:08,681 - INFO - 4 videos found in C:\ml df project\DeepfakeBench\datasets\UADFV\real
+2025-10-28 21:26:11,640 - WARNING - No faces in frame 0 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:12,046 - WARNING - No faces in frame 9 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:12,437 - WARNING - No faces in frame 19 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:12,528 - WARNING - No faces in frame 0 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:12,839 - WARNING - No faces in frame 28 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:13,272 - WARNING - No faces in frame 38 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:13,355 - WARNING - No faces in frame 3 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:13,654 - WARNING - No faces in frame 47 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:14,085 - WARNING - No faces in frame 57 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:14,320 - WARNING - No faces in frame 7 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:14,474 - WARNING - No faces in frame 67 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:14,825 - WARNING - No faces in frame 76 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:15,132 - WARNING - No faces in frame 10 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:15,202 - WARNING - No faces in frame 86 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:15,581 - WARNING - No faces in frame 95 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:15,953 - WARNING - No faces in frame 105 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:16,041 - WARNING - No faces in frame 14 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:16,333 - WARNING - No faces in frame 114 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:16,725 - WARNING - No faces in frame 124 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:16,932 - WARNING - No faces in frame 17 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:18,015 - WARNING - No faces in frame 153 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:18,417 - WARNING - No faces in frame 162 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:18,689 - WARNING - No faces in frame 25 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:18,799 - WARNING - No faces in frame 172 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:19,167 - WARNING - No faces in frame 182 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:19,495 - WARNING - No faces in frame 28 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:19,562 - WARNING - No faces in frame 191 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:19,920 - WARNING - No faces in frame 201 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:20,392 - WARNING - No faces in frame 210 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:20,871 - WARNING - No faces in frame 220 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:21,236 - WARNING - No faces in frame 229 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:21,638 - WARNING - No faces in frame 239 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:22,025 - WARNING - No faces in frame 249 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:22,425 - WARNING - No faces in frame 258 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:22,837 - WARNING - No faces in frame 268 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:23,083 - WARNING - No faces in frame 42 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:23,221 - WARNING - No faces in frame 277 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:23,563 - WARNING - No faces in frame 287 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:23,992 - WARNING - No faces in frame 297 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_002.mp4
+2025-10-28 21:26:24,021 - INFO - Current time: 2025-10-28 21:26:24
+2025-10-28 21:26:26,261 - INFO - Current time: 2025-10-28 21:26:26
+2025-10-28 21:26:27,427 - WARNING - No faces in frame 60 of C:\ml df project\DeepfakeBench\datasets\UADFV\real\real_003.mp4
+2025-10-28 21:26:39,296 - INFO - Current time: 2025-10-28 21:26:39
+2025-10-28 21:26:39,950 - INFO - Current time: 2025-10-28 21:26:39
+2025-10-28 21:26:39,951 - INFO - Total time taken: 0.52 minutes
+2025-10-28 21:26:39,952 - INFO - Face cropping complete!

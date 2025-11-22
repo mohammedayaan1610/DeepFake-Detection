@@ -1,0 +1,596 @@
+2025-09-04 23:11:01,526 - INFO - Save log to ./logs/training/sbi_2025-09-04-23-11-01
+2025-09-04 23:11:01,526 - INFO - --------------- Configuration ---------------
+2025-09-04 23:11:01,527 - INFO - Parameters: 
+log_dir: ./logs/training/
+pretrained: C:/ml df project/DeepfakeBench/training/pretrained/pretrained/xception-b5690688.pth
+model_name: sbi
+backbone_name: efficientnetb4
+backbone_config: {'mode': 'original', 'num_classes': 2, 'inc': 3, 'dropout': False, 'pretrained': True}
+all_dataset: ['FaceForensics++', 'FF-F2F', 'FF-DF', 'FF-FS', 'FF-NT', 'FaceShifter', 'DeepFakeDetection', 'Celeb-DF-v1', 'Celeb-DF-v2', 'DFDCP', 'DFDC', 'DeeperForensics-1.0', 'UADFV']
+train_dataset: ['UADFV']
+test_dataset: ['UADFV']
+dataset_type: blend
+compression: c23
+train_batchSize: 4
+test_batchSize: 4
+workers: 2
+frame_num: {'train': 4, 'test': 8}
+resolution: 224
+with_mask: False
+with_landmark: True
+save_ckpt: True
+save_feat: True
+use_data_augmentation: False
+data_aug: {'flip_prob': 0.5, 'rotate_prob': 0.5, 'rotate_limit': [-10, 10], 'blur_prob': 0.5, 'blur_limit': [3, 7], 'brightness_prob': 0.5, 'brightness_limit': [-0.1, 0.1], 'contrast_limit': [-0.1, 0.1], 'quality_lower': 40, 'quality_upper': 100}
+mean: [0.485, 0.456, 0.406]
+std: [0.229, 0.224, 0.225]
+optimizer: {'type': 'adam', 'adam': {'lr': 0.0002, 'beta1': 0.9, 'beta2': 0.999, 'eps': 1e-08, 'weight_decay': 0.0005, 'amsgrad': False}, 'sgd': {'lr': 0.0002, 'momentum': 0.9, 'weight_decay': 0.0005}, 'sam': {'lr': 0.001, 'momentum': 0.9}}
+lr_scheduler: step
+lr_step: 3
+lr_gamma: 0.4
+nEpochs: 20
+start_epoch: 0
+save_epoch: 1
+rec_iter: 100
+logdir: ./logs
+manualSeed: 1024
+loss_func: cross_entropy
+losstype: None
+metric_scoring: auc
+cuda: True
+cudnn: True
+mode: train
+lmdb: False
+dry_run: False
+rgb_dir: ./datasets
+lmdb_dir: 
+dataset_json_folder: C:/ml df project/DeepfakeBench/preprocessing/dataset_json
+SWA: False
+save_avg: True
+label_dict: {'DFD_fake': 1, 'DFD_real': 0, 'FF-SH': 1, 'FF-F2F': 1, 'FF-DF': 1, 'FF-FS': 1, 'FF-NT': 1, 'FF-FH': 1, 'FF-real': 0, 'CelebDFv1_real': 0, 'CelebDFv1_fake': 1, 'CelebDFv2_real': 0, 'CelebDFv2_fake': 1, 'DFDCP_Real': 0, 'DFDCP_FakeA': 1, 'DFDCP_FakeB': 1, 'DFDC_Fake': 1, 'DFDC_Real': 0, 'DF_fake': 1, 'DF_real': 0, 'UADFV_Fake': 1, 'UADFV_Real': 0, 'roop_Real': 0, 'roop_Fake': 1}
+local_rank: 0
+ddp: False
+
+2025-09-04 23:11:02,135 - INFO - Load pretrained model successfully!
+2025-09-04 23:11:02,320 - INFO - ===> Epoch[0] start!
+2025-09-04 23:11:02,322 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:11:27,745 - INFO - Iter: 0    training-loss, overall: 0.6717680096626282    
+2025-09-04 23:11:27,758 - INFO - Iter: 0    training-metric, acc: 0.375    training-metric, auc: 0.5    training-metric, eer: 0.5    training-metric, ap: 0.6428571428571428    
+2025-09-04 23:12:13,660 - INFO - ===> Test start!
+2025-09-04 23:12:13,672 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:13:02,818 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 0+48
+2025-09-04 23:13:02,821 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:13:02,826 - INFO - dataset: UADFV    step: 48    testing-loss, overall: 0.6612775325775146    
+2025-09-04 23:13:02,848 - INFO - dataset: UADFV    step: 48    testing-metric, acc: 0.5969387755102041    testing-metric, auc: 0.6408202311536859    testing-metric, eer: 0.4005102040816326    testing-metric, ap: 0.6302070630159424    testing-metric, video_auc: 0.6526447313619326    testing-metric, acc_real:0.4872448979591837; acc_fake:0.7066326530612245
+2025-09-04 23:13:03,110 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 0+48
+2025-09-04 23:13:03,112 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:13:03,129 - INFO - dataset: avg    step: 48    testing-metric, acc: 0.5969387755102041    testing-metric, auc: 0.6408202311536859    testing-metric, eer: 0.4005102040816326    testing-metric, ap: 0.6302070630159424    testing-metric, video_auc: 0.6526447313619326    
+2025-09-04 23:13:03,131 - INFO - ===> Test Done!
+2025-09-04 23:13:03,681 - INFO - ===> Epoch[0] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.6408202311536859 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.6408202311536859 | 
+| UADFV: 0.6408202311536859 | 
+=============================================================================================!
+2025-09-04 23:13:03,682 - INFO - ===> Epoch[1] start!
+2025-09-04 23:13:03,683 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:13:22,879 - INFO - Iter: 49    training-loss, overall: 0.37258875370025635    
+2025-09-04 23:13:22,879 - INFO - Iter: 49    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:13:44,074 - INFO - ===> Test start!
+2025-09-04 23:13:44,077 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:14:30,130 - INFO - dataset: UADFV    step: 71    testing-loss, overall: 0.8677024841308594    
+2025-09-04 23:14:30,132 - INFO - dataset: UADFV    step: 71    testing-metric, acc: 0.5357142857142857    testing-metric, auc: 0.5992750416493128    testing-metric, eer: 0.42091836734693877    testing-metric, ap: 0.555464869209365    testing-metric, video_auc: 0.60932944606414    testing-metric, acc_real:0.11734693877551021; acc_fake:0.9540816326530612
+2025-09-04 23:14:30,132 - INFO - dataset: avg    step: 71    testing-metric, acc: 0.5357142857142857    testing-metric, auc: 0.5992750416493128    testing-metric, eer: 0.42091836734693877    testing-metric, ap: 0.555464869209365    testing-metric, video_auc: 0.60932944606414    
+2025-09-04 23:14:30,134 - INFO - ===> Test Done!
+2025-09-04 23:14:53,318 - INFO - ===> Test start!
+2025-09-04 23:14:53,322 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:15:38,623 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 1+46
+2025-09-04 23:15:38,625 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:15:38,627 - INFO - dataset: UADFV    step: 95    testing-loss, overall: 0.6845576167106628    
+2025-09-04 23:15:38,631 - INFO - dataset: UADFV    step: 95    testing-metric, acc: 0.6198979591836735    testing-metric, auc: 0.6636037067888378    testing-metric, eer: 0.39540816326530615    testing-metric, ap: 0.6310609198367471    testing-metric, video_auc: 0.6805497709287796    testing-metric, acc_real:0.4387755102040816; acc_fake:0.8010204081632653
+2025-09-04 23:15:38,931 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 1+46
+2025-09-04 23:15:38,933 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:15:38,934 - INFO - dataset: avg    step: 95    testing-metric, acc: 0.6198979591836735    testing-metric, auc: 0.6636037067888378    testing-metric, eer: 0.39540816326530615    testing-metric, ap: 0.6310609198367471    testing-metric, video_auc: 0.6805497709287796    
+2025-09-04 23:15:38,935 - INFO - ===> Test Done!
+2025-09-04 23:15:41,418 - INFO - ===> Epoch[1] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.6636037067888378 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.6636037067888378 | 
+| UADFV: 0.6636037067888378 | 
+=============================================================================================!
+2025-09-04 23:15:41,418 - INFO - ===> Epoch[2] start!
+2025-09-04 23:15:41,420 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:15:59,799 - INFO - Iter: 98    training-loss, overall: 0.16828922927379608    
+2025-09-04 23:15:59,800 - INFO - Iter: 98    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:16:20,199 - INFO - ===> Test start!
+2025-09-04 23:16:20,202 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:17:08,545 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 2+21
+2025-09-04 23:17:08,547 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:17:08,548 - INFO - dataset: UADFV    step: 119    testing-loss, overall: 0.7548806071281433    
+2025-09-04 23:17:08,550 - INFO - dataset: UADFV    step: 119    testing-metric, acc: 0.5982142857142857    testing-metric, auc: 0.6696819033735942    testing-metric, eer: 0.38010204081632654    testing-metric, ap: 0.6501326776898175    testing-metric, video_auc: 0.6801332778009164    testing-metric, acc_real:0.31887755102040816; acc_fake:0.8775510204081632
+2025-09-04 23:17:08,842 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 2+21
+2025-09-04 23:17:08,844 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:17:08,845 - INFO - dataset: avg    step: 119    testing-metric, acc: 0.5982142857142857    testing-metric, auc: 0.6696819033735942    testing-metric, eer: 0.38010204081632654    testing-metric, ap: 0.6501326776898175    testing-metric, video_auc: 0.6801332778009164    
+2025-09-04 23:17:08,845 - INFO - ===> Test Done!
+2025-09-04 23:17:32,431 - INFO - ===> Test start!
+2025-09-04 23:17:32,434 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:18:20,893 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 2+45
+2025-09-04 23:18:20,895 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:18:20,896 - INFO - dataset: UADFV    step: 143    testing-loss, overall: 0.8739032745361328    
+2025-09-04 23:18:20,898 - INFO - dataset: UADFV    step: 143    testing-metric, acc: 0.5790816326530612    testing-metric, auc: 0.7197912328196585    testing-metric, eer: 0.33418367346938777    testing-metric, ap: 0.7402133690255889    testing-metric, video_auc: 0.7334443981674302    testing-metric, acc_real:0.26785714285714285; acc_fake:0.8903061224489796
+2025-09-04 23:18:21,183 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 2+45
+2025-09-04 23:18:21,185 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:18:21,186 - INFO - dataset: avg    step: 143    testing-metric, acc: 0.5790816326530612    testing-metric, auc: 0.7197912328196585    testing-metric, eer: 0.33418367346938777    testing-metric, ap: 0.7402133690255889    testing-metric, video_auc: 0.7334443981674302    
+2025-09-04 23:18:21,187 - INFO - ===> Test Done!
+2025-09-04 23:18:24,547 - INFO - ===> Epoch[2] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.7197912328196585 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.7197912328196585 | 
+| UADFV: 0.7197912328196585 | 
+=============================================================================================!
+2025-09-04 23:18:24,548 - INFO - ===> Epoch[3] start!
+2025-09-04 23:18:24,549 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:18:43,314 - INFO - Iter: 147    training-loss, overall: 0.19032496213912964    
+2025-09-04 23:18:43,314 - INFO - Iter: 147    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:19:04,275 - INFO - ===> Test start!
+2025-09-04 23:19:04,279 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:19:51,566 - INFO - dataset: UADFV    step: 167    testing-loss, overall: 1.4495006799697876    
+2025-09-04 23:19:51,568 - INFO - dataset: UADFV    step: 167    testing-metric, acc: 0.5535714285714286    testing-metric, auc: 0.7089363806747189    testing-metric, eer: 0.32908163265306123    testing-metric, ap: 0.700658966695267    testing-metric, video_auc: 0.7205331112036651    testing-metric, acc_real:0.15051020408163265; acc_fake:0.9566326530612245
+2025-09-04 23:19:51,569 - INFO - dataset: avg    step: 167    testing-metric, acc: 0.5535714285714286    testing-metric, auc: 0.7089363806747189    testing-metric, eer: 0.32908163265306123    testing-metric, ap: 0.700658966695267    testing-metric, video_auc: 0.7205331112036651    
+2025-09-04 23:19:51,570 - INFO - ===> Test Done!
+2025-09-04 23:20:15,737 - INFO - ===> Test start!
+2025-09-04 23:20:15,741 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:21:01,085 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 3+44
+2025-09-04 23:21:01,086 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:21:01,088 - INFO - dataset: UADFV    step: 191    testing-loss, overall: 0.917983889579773    
+2025-09-04 23:21:01,093 - INFO - dataset: UADFV    step: 191    testing-metric, acc: 0.6084183673469388    testing-metric, auc: 0.7675382653061225    testing-metric, eer: 0.29081632653061223    testing-metric, ap: 0.7207851488182453    testing-metric, video_auc: 0.7946688879633486    testing-metric, acc_real:0.25; acc_fake:0.9668367346938775
+2025-09-04 23:21:01,397 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 3+44
+2025-09-04 23:21:01,398 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:21:01,399 - INFO - dataset: avg    step: 191    testing-metric, acc: 0.6084183673469388    testing-metric, auc: 0.7675382653061225    testing-metric, eer: 0.29081632653061223    testing-metric, ap: 0.7207851488182453    testing-metric, video_auc: 0.7946688879633486    
+2025-09-04 23:21:01,400 - INFO - ===> Test Done!
+2025-09-04 23:21:05,991 - INFO - ===> Epoch[3] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.7675382653061225 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.7675382653061225 | 
+| UADFV: 0.7675382653061225 | 
+=============================================================================================!
+2025-09-04 23:21:05,992 - INFO - ===> Epoch[4] start!
+2025-09-04 23:21:05,993 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:21:24,243 - INFO - Iter: 196    training-loss, overall: 0.6940320134162903    
+2025-09-04 23:21:24,244 - INFO - Iter: 196    training-metric, acc: 0.625    training-metric, auc: 0.75    training-metric, eer: 0.5    training-metric, ap: 0.8166666666666667    
+2025-09-04 23:21:42,391 - INFO - ===> Test start!
+2025-09-04 23:21:42,395 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:22:30,790 - INFO - dataset: UADFV    step: 215    testing-loss, overall: 0.6771950721740723    
+2025-09-04 23:22:30,793 - INFO - dataset: UADFV    step: 215    testing-metric, acc: 0.6798469387755102    testing-metric, auc: 0.7269497084548106    testing-metric, eer: 0.3239795918367347    testing-metric, ap: 0.7110730483268584    testing-metric, video_auc: 0.7467721782590587    testing-metric, acc_real:0.625; acc_fake:0.7346938775510204
+2025-09-04 23:22:30,794 - INFO - dataset: avg    step: 215    testing-metric, acc: 0.6798469387755102    testing-metric, auc: 0.7269497084548106    testing-metric, eer: 0.3239795918367347    testing-metric, ap: 0.7110730483268584    testing-metric, video_auc: 0.7467721782590587    
+2025-09-04 23:22:30,795 - INFO - ===> Test Done!
+2025-09-04 23:22:54,991 - INFO - ===> Test start!
+2025-09-04 23:22:54,995 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:23:40,642 - INFO - dataset: UADFV    step: 239    testing-loss, overall: 0.6031022667884827    
+2025-09-04 23:23:40,643 - INFO - dataset: UADFV    step: 239    testing-metric, acc: 0.6798469387755102    testing-metric, auc: 0.7564621511870054    testing-metric, eer: 0.3137755102040816    testing-metric, ap: 0.7582414759917624    testing-metric, video_auc: 0.790920449812578    testing-metric, acc_real:0.6530612244897959; acc_fake:0.7066326530612245
+2025-09-04 23:23:40,644 - INFO - dataset: avg    step: 239    testing-metric, acc: 0.6798469387755102    testing-metric, auc: 0.7564621511870054    testing-metric, eer: 0.3137755102040816    testing-metric, ap: 0.7582414759917624    testing-metric, video_auc: 0.790920449812578    
+2025-09-04 23:23:40,645 - INFO - ===> Test Done!
+2025-09-04 23:23:46,078 - INFO - ===> Epoch[4] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.7675382653061225 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.7675382653061225 | 
+| UADFV: 0.7675382653061225 | 
+=============================================================================================!
+2025-09-04 23:23:46,078 - INFO - ===> Epoch[5] start!
+2025-09-04 23:23:46,080 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:24:04,454 - INFO - Iter: 245    training-loss, overall: 0.20971621572971344    
+2025-09-04 23:24:04,455 - INFO - Iter: 245    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:24:22,099 - INFO - ===> Test start!
+2025-09-04 23:24:22,103 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:25:06,918 - INFO - dataset: UADFV    step: 263    testing-loss, overall: 0.6663790345191956    
+2025-09-04 23:25:06,920 - INFO - dataset: UADFV    step: 263    testing-metric, acc: 0.701530612244898    testing-metric, auc: 0.7623711474385675    testing-metric, eer: 0.3086734693877551    testing-metric, ap: 0.7261001159112704    testing-metric, video_auc: 0.8000832986255726    testing-metric, acc_real:0.5663265306122449; acc_fake:0.8367346938775511
+2025-09-04 23:25:06,921 - INFO - dataset: avg    step: 263    testing-metric, acc: 0.701530612244898    testing-metric, auc: 0.7623711474385675    testing-metric, eer: 0.3086734693877551    testing-metric, ap: 0.7261001159112704    testing-metric, video_auc: 0.8000832986255726    
+2025-09-04 23:25:06,922 - INFO - ===> Test Done!
+2025-09-04 23:25:30,625 - INFO - ===> Test start!
+2025-09-04 23:25:30,628 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:26:16,205 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 5+42
+2025-09-04 23:26:16,206 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:26:16,207 - INFO - dataset: UADFV    step: 287    testing-loss, overall: 0.6440184712409973    
+2025-09-04 23:26:16,210 - INFO - dataset: UADFV    step: 287    testing-metric, acc: 0.7168367346938775    testing-metric, auc: 0.783918159100375    testing-metric, eer: 0.29336734693877553    testing-metric, ap: 0.7775218632593336    testing-metric, video_auc: 0.8200749687630154    testing-metric, acc_real:0.6198979591836735; acc_fake:0.8137755102040817
+2025-09-04 23:26:16,483 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 5+42
+2025-09-04 23:26:16,485 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:26:16,486 - INFO - dataset: avg    step: 287    testing-metric, acc: 0.7168367346938775    testing-metric, auc: 0.783918159100375    testing-metric, eer: 0.29336734693877553    testing-metric, ap: 0.7775218632593336    testing-metric, video_auc: 0.8200749687630154    
+2025-09-04 23:26:16,487 - INFO - ===> Test Done!
+2025-09-04 23:26:23,172 - INFO - ===> Epoch[5] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.783918159100375 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.783918159100375 | 
+| UADFV: 0.783918159100375 | 
+=============================================================================================!
+2025-09-04 23:26:23,173 - INFO - ===> Epoch[6] start!
+2025-09-04 23:26:23,175 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:26:42,353 - INFO - Iter: 294    training-loss, overall: 0.38272616267204285    
+2025-09-04 23:26:42,354 - INFO - Iter: 294    training-metric, acc: 0.75    training-metric, auc: 0.875    training-metric, eer: 0.0    training-metric, ap: 0.9166666666666666    
+2025-09-04 23:26:59,603 - INFO - ===> Test start!
+2025-09-04 23:26:59,608 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:27:46,030 - INFO - dataset: UADFV    step: 311    testing-loss, overall: 0.7656009793281555    
+2025-09-04 23:27:46,032 - INFO - dataset: UADFV    step: 311    testing-metric, acc: 0.6989795918367347    testing-metric, auc: 0.7546139629321116    testing-metric, eer: 0.29336734693877553    testing-metric, ap: 0.7507581206526932    testing-metric, video_auc: 0.7905039566847147    testing-metric, acc_real:0.8520408163265306; acc_fake:0.5459183673469388
+2025-09-04 23:27:46,033 - INFO - dataset: avg    step: 311    testing-metric, acc: 0.6989795918367347    testing-metric, auc: 0.7546139629321116    testing-metric, eer: 0.29336734693877553    testing-metric, ap: 0.7507581206526932    testing-metric, video_auc: 0.7905039566847147    
+2025-09-04 23:27:46,033 - INFO - ===> Test Done!
+2025-09-04 23:28:09,435 - INFO - ===> Test start!
+2025-09-04 23:28:09,438 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:28:54,079 - INFO - dataset: UADFV    step: 335    testing-loss, overall: 0.7174006700515747    
+2025-09-04 23:28:54,081 - INFO - dataset: UADFV    step: 335    testing-metric, acc: 0.6951530612244898    testing-metric, auc: 0.7652540608079967    testing-metric, eer: 0.30357142857142855    testing-metric, ap: 0.76335983137287    testing-metric, video_auc: 0.798417326114119    testing-metric, acc_real:0.673469387755102; acc_fake:0.7168367346938775
+2025-09-04 23:28:54,082 - INFO - dataset: avg    step: 335    testing-metric, acc: 0.6951530612244898    testing-metric, auc: 0.7652540608079967    testing-metric, eer: 0.30357142857142855    testing-metric, ap: 0.76335983137287    testing-metric, video_auc: 0.798417326114119    
+2025-09-04 23:28:54,083 - INFO - ===> Test Done!
+2025-09-04 23:29:01,515 - INFO - ===> Epoch[6] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.783918159100375 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.783918159100375 | 
+| UADFV: 0.783918159100375 | 
+=============================================================================================!
+2025-09-04 23:29:01,516 - INFO - ===> Epoch[7] start!
+2025-09-04 23:29:01,517 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:29:19,746 - INFO - Iter: 343    training-loss, overall: 0.12121659517288208    
+2025-09-04 23:29:19,746 - INFO - Iter: 343    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:29:35,725 - INFO - ===> Test start!
+2025-09-04 23:29:35,728 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:30:21,042 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 7+16
+2025-09-04 23:30:21,043 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:30:21,044 - INFO - dataset: UADFV    step: 359    testing-loss, overall: 0.7056018114089966    
+2025-09-04 23:30:21,045 - INFO - dataset: UADFV    step: 359    testing-metric, acc: 0.75    testing-metric, auc: 0.8258342877967514    testing-metric, eer: 0.2372448979591837    testing-metric, ap: 0.785212569556508    testing-metric, video_auc: 0.8829654310703874    testing-metric, acc_real:0.6683673469387755; acc_fake:0.8316326530612245
+2025-09-04 23:30:21,302 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 7+16
+2025-09-04 23:30:21,303 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:30:21,304 - INFO - dataset: avg    step: 359    testing-metric, acc: 0.75    testing-metric, auc: 0.8258342877967514    testing-metric, eer: 0.2372448979591837    testing-metric, ap: 0.785212569556508    testing-metric, video_auc: 0.8829654310703874    
+2025-09-04 23:30:21,305 - INFO - ===> Test Done!
+2025-09-04 23:30:45,103 - INFO - ===> Test start!
+2025-09-04 23:30:45,107 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:31:30,335 - INFO - dataset: UADFV    step: 383    testing-loss, overall: 0.7443482875823975    
+2025-09-04 23:31:30,337 - INFO - dataset: UADFV    step: 383    testing-metric, acc: 0.7512755102040817    testing-metric, auc: 0.7973435547688463    testing-metric, eer: 0.25    testing-metric, ap: 0.7486056006330842    testing-metric, video_auc: 0.8334027488546438    testing-metric, acc_real:0.6862244897959183; acc_fake:0.8163265306122449
+2025-09-04 23:31:30,338 - INFO - dataset: avg    step: 383    testing-metric, acc: 0.7512755102040817    testing-metric, auc: 0.7973435547688463    testing-metric, eer: 0.25    testing-metric, ap: 0.7486056006330842    testing-metric, video_auc: 0.8334027488546438    
+2025-09-04 23:31:30,339 - INFO - ===> Test Done!
+2025-09-04 23:31:38,775 - INFO - ===> Epoch[7] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8258342877967514 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8258342877967514 | 
+| UADFV: 0.8258342877967514 | 
+=============================================================================================!
+2025-09-04 23:31:38,775 - INFO - ===> Epoch[8] start!
+2025-09-04 23:31:38,777 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:31:56,893 - INFO - Iter: 392    training-loss, overall: 0.5252196788787842    
+2025-09-04 23:31:56,894 - INFO - Iter: 392    training-metric, acc: 0.75    training-metric, auc: 0.875    training-metric, eer: 0.0    training-metric, ap: 0.9166666666666666    
+2025-09-04 23:32:11,598 - INFO - ===> Test start!
+2025-09-04 23:32:11,602 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:32:57,334 - INFO - dataset: UADFV    step: 407    testing-loss, overall: 0.8008375763893127    
+2025-09-04 23:32:57,336 - INFO - dataset: UADFV    step: 407    testing-metric, acc: 0.6466836734693877    testing-metric, auc: 0.6753240837151187    testing-metric, eer: 0.37244897959183676    testing-metric, ap: 0.6191696416690067    testing-metric, video_auc: 0.7017909204498125    testing-metric, acc_real:0.5510204081632653; acc_fake:0.7423469387755102
+2025-09-04 23:32:57,336 - INFO - dataset: avg    step: 407    testing-metric, acc: 0.6466836734693877    testing-metric, auc: 0.6753240837151187    testing-metric, eer: 0.37244897959183676    testing-metric, ap: 0.6191696416690067    testing-metric, video_auc: 0.7017909204498125    
+2025-09-04 23:32:57,337 - INFO - ===> Test Done!
+2025-09-04 23:33:20,840 - INFO - ===> Test start!
+2025-09-04 23:33:20,844 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:34:05,543 - INFO - dataset: UADFV    step: 431    testing-loss, overall: 0.8925296664237976    
+2025-09-04 23:34:05,545 - INFO - dataset: UADFV    step: 431    testing-metric, acc: 0.6454081632653061    testing-metric, auc: 0.784002759266972    testing-metric, eer: 0.27040816326530615    testing-metric, ap: 0.7649767729252868    testing-metric, video_auc: 0.8242399000416493    testing-metric, acc_real:0.9183673469387755; acc_fake:0.37244897959183676
+2025-09-04 23:34:05,546 - INFO - dataset: avg    step: 431    testing-metric, acc: 0.6454081632653061    testing-metric, auc: 0.784002759266972    testing-metric, eer: 0.27040816326530615    testing-metric, ap: 0.7649767729252868    testing-metric, video_auc: 0.8242399000416493    
+2025-09-04 23:34:05,547 - INFO - ===> Test Done!
+2025-09-04 23:34:15,023 - INFO - ===> Epoch[8] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8258342877967514 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8258342877967514 | 
+| UADFV: 0.8258342877967514 | 
+=============================================================================================!
+2025-09-04 23:34:15,024 - INFO - ===> Epoch[9] start!
+2025-09-04 23:34:15,025 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:34:33,062 - INFO - Iter: 441    training-loss, overall: 0.1256236433982849    
+2025-09-04 23:34:33,063 - INFO - Iter: 441    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:34:46,739 - INFO - ===> Test start!
+2025-09-04 23:34:46,743 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:35:34,374 - INFO - dataset: UADFV    step: 455    testing-loss, overall: 0.9042757749557495    
+2025-09-04 23:35:34,376 - INFO - dataset: UADFV    step: 455    testing-metric, acc: 0.6556122448979592    testing-metric, auc: 0.8193070595585173    testing-metric, eer: 0.24489795918367346    testing-metric, ap: 0.8186927668720134    testing-metric, video_auc: 0.8713036234902125    testing-metric, acc_real:0.9591836734693877; acc_fake:0.3520408163265306
+2025-09-04 23:35:34,376 - INFO - dataset: avg    step: 455    testing-metric, acc: 0.6556122448979592    testing-metric, auc: 0.8193070595585173    testing-metric, eer: 0.24489795918367346    testing-metric, ap: 0.8186927668720134    testing-metric, video_auc: 0.8713036234902125    
+2025-09-04 23:35:34,377 - INFO - ===> Test Done!
+2025-09-04 23:35:59,426 - INFO - ===> Test start!
+2025-09-04 23:35:59,430 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:36:45,899 - INFO - dataset: UADFV    step: 479    testing-loss, overall: 0.8480166792869568    
+2025-09-04 23:36:45,902 - INFO - dataset: UADFV    step: 479    testing-metric, acc: 0.6428571428571429    testing-metric, auc: 0.7838921282798833    testing-metric, eer: 0.28061224489795916    testing-metric, ap: 0.7633818273222438    testing-metric, video_auc: 0.8229904206580592    testing-metric, acc_real:0.9311224489795918; acc_fake:0.35459183673469385
+2025-09-04 23:36:45,903 - INFO - dataset: avg    step: 479    testing-metric, acc: 0.6428571428571429    testing-metric, auc: 0.7838921282798833    testing-metric, eer: 0.28061224489795916    testing-metric, ap: 0.7633818273222438    testing-metric, video_auc: 0.8229904206580592    
+2025-09-04 23:36:45,905 - INFO - ===> Test Done!
+2025-09-04 23:36:56,462 - INFO - ===> Epoch[9] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8258342877967514 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8258342877967514 | 
+| UADFV: 0.8258342877967514 | 
+=============================================================================================!
+2025-09-04 23:36:56,463 - INFO - ===> Epoch[10] start!
+2025-09-04 23:36:56,465 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:37:15,822 - INFO - Iter: 490    training-loss, overall: 0.13122700154781342    
+2025-09-04 23:37:15,822 - INFO - Iter: 490    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:37:29,330 - INFO - ===> Test start!
+2025-09-04 23:37:29,334 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:38:18,475 - INFO - dataset: UADFV    step: 503    testing-loss, overall: 0.9801511168479919    
+2025-09-04 23:38:18,478 - INFO - dataset: UADFV    step: 503    testing-metric, acc: 0.6492346938775511    testing-metric, auc: 0.7768572990420658    testing-metric, eer: 0.2780612244897959    testing-metric, ap: 0.7464325781375302    testing-metric, video_auc: 0.8050812161599334    testing-metric, acc_real:0.8903061224489796; acc_fake:0.40816326530612246
+2025-09-04 23:38:18,479 - INFO - dataset: avg    step: 503    testing-metric, acc: 0.6492346938775511    testing-metric, auc: 0.7768572990420658    testing-metric, eer: 0.2780612244897959    testing-metric, ap: 0.7464325781375302    testing-metric, video_auc: 0.8050812161599334    
+2025-09-04 23:38:18,480 - INFO - ===> Test Done!
+2025-09-04 23:38:43,731 - INFO - ===> Test start!
+2025-09-04 23:38:43,734 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:39:31,715 - INFO - dataset: UADFV    step: 527    testing-loss, overall: 0.7902407646179199    
+2025-09-04 23:39:31,717 - INFO - dataset: UADFV    step: 527    testing-metric, acc: 0.6836734693877551    testing-metric, auc: 0.8253201790920449    testing-metric, eer: 0.22959183673469388    testing-metric, ap: 0.7908702413109902    testing-metric, video_auc: 0.8633902540608079    testing-metric, acc_real:0.875; acc_fake:0.4923469387755102
+2025-09-04 23:39:31,718 - INFO - dataset: avg    step: 527    testing-metric, acc: 0.6836734693877551    testing-metric, auc: 0.8253201790920449    testing-metric, eer: 0.22959183673469388    testing-metric, ap: 0.7908702413109902    testing-metric, video_auc: 0.8633902540608079    
+2025-09-04 23:39:31,720 - INFO - ===> Test Done!
+2025-09-04 23:39:43,329 - INFO - ===> Epoch[10] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8258342877967514 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8258342877967514 | 
+| UADFV: 0.8258342877967514 | 
+=============================================================================================!
+2025-09-04 23:39:43,329 - INFO - ===> Epoch[11] start!
+2025-09-04 23:39:43,331 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:40:05,283 - INFO - Iter: 539    training-loss, overall: 0.07947496324777603    
+2025-09-04 23:40:05,284 - INFO - Iter: 539    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:40:17,734 - INFO - ===> Test start!
+2025-09-04 23:40:17,741 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:41:07,594 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 11+12
+2025-09-04 23:41:07,596 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:41:07,597 - INFO - dataset: UADFV    step: 551    testing-loss, overall: 0.6274335980415344    
+2025-09-04 23:41:07,599 - INFO - dataset: UADFV    step: 551    testing-metric, acc: 0.6913265306122449    testing-metric, auc: 0.8798937942523949    testing-metric, eer: 0.1836734693877551    testing-metric, ap: 0.8452729125887277    testing-metric, video_auc: 0.9133694294044149    testing-metric, acc_real:0.9464285714285714; acc_fake:0.4362244897959184
+2025-09-04 23:41:07,884 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 11+12
+2025-09-04 23:41:07,885 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:41:07,886 - INFO - dataset: avg    step: 551    testing-metric, acc: 0.6913265306122449    testing-metric, auc: 0.8798937942523949    testing-metric, eer: 0.1836734693877551    testing-metric, ap: 0.8452729125887277    testing-metric, video_auc: 0.9133694294044149    
+2025-09-04 23:41:07,887 - INFO - ===> Test Done!
+2025-09-04 23:41:32,996 - INFO - ===> Test start!
+2025-09-04 23:41:33,000 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:42:19,889 - INFO - dataset: UADFV    step: 575    testing-loss, overall: 0.7266951203346252    
+2025-09-04 23:42:19,891 - INFO - dataset: UADFV    step: 575    testing-metric, acc: 0.7028061224489796    testing-metric, auc: 0.7917208975426906    testing-metric, eer: 0.2755102040816326    testing-metric, ap: 0.7317802088270863    testing-metric, video_auc: 0.8317367763431903    testing-metric, acc_real:0.8137755102040817; acc_fake:0.5918367346938775
+2025-09-04 23:42:19,891 - INFO - dataset: avg    step: 575    testing-metric, acc: 0.7028061224489796    testing-metric, auc: 0.7917208975426906    testing-metric, eer: 0.2755102040816326    testing-metric, ap: 0.7317802088270863    testing-metric, video_auc: 0.8317367763431903    
+2025-09-04 23:42:19,892 - INFO - ===> Test Done!
+2025-09-04 23:42:33,399 - INFO - ===> Epoch[11] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8798937942523949 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8798937942523949 | 
+| UADFV: 0.8798937942523949 | 
+=============================================================================================!
+2025-09-04 23:42:33,399 - INFO - ===> Epoch[12] start!
+2025-09-04 23:42:33,401 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:42:52,235 - INFO - Iter: 588    training-loss, overall: 0.4250267744064331    
+2025-09-04 23:42:52,236 - INFO - Iter: 588    training-metric, acc: 0.875    training-metric, auc: 0.9375    training-metric, eer: 0.25    training-metric, ap: 0.95    
+2025-09-04 23:43:03,169 - INFO - ===> Test start!
+2025-09-04 23:43:03,173 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:43:51,022 - INFO - dataset: UADFV    step: 599    testing-loss, overall: 0.7495133876800537    
+2025-09-04 23:43:51,024 - INFO - dataset: UADFV    step: 599    testing-metric, acc: 0.7321428571428571    testing-metric, auc: 0.7937578092461474    testing-metric, eer: 0.2627551020408163    testing-metric, ap: 0.7582585794520477    testing-metric, video_auc: 0.8588088296543106    testing-metric, acc_real:0.5892857142857143; acc_fake:0.875
+2025-09-04 23:43:51,024 - INFO - dataset: avg    step: 599    testing-metric, acc: 0.7321428571428571    testing-metric, auc: 0.7937578092461474    testing-metric, eer: 0.2627551020408163    testing-metric, ap: 0.7582585794520477    testing-metric, video_auc: 0.8588088296543106    
+2025-09-04 23:43:51,026 - INFO - ===> Test Done!
+2025-09-04 23:44:14,818 - INFO - ===> Test start!
+2025-09-04 23:44:14,821 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:45:00,383 - INFO - dataset: UADFV    step: 623    testing-loss, overall: 1.1059733629226685    
+2025-09-04 23:45:00,385 - INFO - dataset: UADFV    step: 623    testing-metric, acc: 0.6326530612244898    testing-metric, auc: 0.7795775197834235    testing-metric, eer: 0.2729591836734694    testing-metric, ap: 0.7233362489451893    testing-metric, video_auc: 0.8029987505206164    testing-metric, acc_real:0.8954081632653061; acc_fake:0.36989795918367346
+2025-09-04 23:45:00,386 - INFO - dataset: avg    step: 623    testing-metric, acc: 0.6326530612244898    testing-metric, auc: 0.7795775197834235    testing-metric, eer: 0.2729591836734694    testing-metric, ap: 0.7233362489451893    testing-metric, video_auc: 0.8029987505206164    
+2025-09-04 23:45:00,386 - INFO - ===> Test Done!
+2025-09-04 23:45:13,714 - INFO - ===> Epoch[12] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8798937942523949 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8798937942523949 | 
+| UADFV: 0.8798937942523949 | 
+=============================================================================================!
+2025-09-04 23:45:13,715 - INFO - ===> Epoch[13] start!
+2025-09-04 23:45:13,716 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:45:32,015 - INFO - Iter: 637    training-loss, overall: 0.031831447035074234    
+2025-09-04 23:45:32,016 - INFO - Iter: 637    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:45:41,758 - INFO - ===> Test start!
+2025-09-04 23:45:41,762 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:46:27,213 - INFO - dataset: UADFV    step: 647    testing-loss, overall: 1.7713323831558228    
+2025-09-04 23:46:27,214 - INFO - dataset: UADFV    step: 647    testing-metric, acc: 0.576530612244898    testing-metric, auc: 0.736743804664723    testing-metric, eer: 0.336734693877551    testing-metric, ap: 0.7384967488378691    testing-metric, video_auc: 0.7480216576426488    testing-metric, acc_real:0.9642857142857143; acc_fake:0.18877551020408162
+2025-09-04 23:46:27,215 - INFO - dataset: avg    step: 647    testing-metric, acc: 0.576530612244898    testing-metric, auc: 0.736743804664723    testing-metric, eer: 0.336734693877551    testing-metric, ap: 0.7384967488378691    testing-metric, video_auc: 0.7480216576426488    
+2025-09-04 23:46:27,216 - INFO - ===> Test Done!
+2025-09-04 23:46:50,019 - INFO - ===> Test start!
+2025-09-04 23:46:50,022 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:47:35,026 - INFO - dataset: UADFV    step: 671    testing-loss, overall: 1.5129821300506592    
+2025-09-04 23:47:35,028 - INFO - dataset: UADFV    step: 671    testing-metric, acc: 0.6084183673469388    testing-metric, auc: 0.70873464181591    testing-metric, eer: 0.3494897959183674    testing-metric, ap: 0.7155021196903906    testing-metric, video_auc: 0.7184506455643481    testing-metric, acc_real:0.9617346938775511; acc_fake:0.25510204081632654
+2025-09-04 23:47:35,029 - INFO - dataset: avg    step: 671    testing-metric, acc: 0.6084183673469388    testing-metric, auc: 0.70873464181591    testing-metric, eer: 0.3494897959183674    testing-metric, ap: 0.7155021196903906    testing-metric, video_auc: 0.7184506455643481    
+2025-09-04 23:47:35,030 - INFO - ===> Test Done!
+2025-09-04 23:47:48,864 - INFO - ===> Epoch[13] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8798937942523949 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8798937942523949 | 
+| UADFV: 0.8798937942523949 | 
+=============================================================================================!
+2025-09-04 23:47:48,865 - INFO - ===> Epoch[14] start!
+2025-09-04 23:47:48,867 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:48:08,264 - INFO - Iter: 686    training-loss, overall: 0.43611767888069153    
+2025-09-04 23:48:08,265 - INFO - Iter: 686    training-metric, acc: 0.75    training-metric, auc: 0.875    training-metric, eer: 0.0    training-metric, ap: 0.9166666666666666    
+2025-09-04 23:48:17,057 - INFO - ===> Test start!
+2025-09-04 23:48:17,060 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:49:03,733 - INFO - dataset: UADFV    step: 695    testing-loss, overall: 1.2055699825286865    
+2025-09-04 23:49:03,735 - INFO - dataset: UADFV    step: 695    testing-metric, acc: 0.610969387755102    testing-metric, auc: 0.7368023740108288    testing-metric, eer: 0.33163265306122447    testing-metric, ap: 0.7196506272179549    testing-metric, video_auc: 0.7792586422324032    testing-metric, acc_real:0.9030612244897959; acc_fake:0.31887755102040816
+2025-09-04 23:49:03,737 - INFO - dataset: avg    step: 695    testing-metric, acc: 0.610969387755102    testing-metric, auc: 0.7368023740108288    testing-metric, eer: 0.33163265306122447    testing-metric, ap: 0.7196506272179549    testing-metric, video_auc: 0.7792586422324032    
+2025-09-04 23:49:03,738 - INFO - ===> Test Done!
+2025-09-04 23:49:26,860 - INFO - ===> Test start!
+2025-09-04 23:49:26,867 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:50:11,982 - INFO - dataset: UADFV    step: 719    testing-loss, overall: 0.8329216241836548    
+2025-09-04 23:50:11,984 - INFO - dataset: UADFV    step: 719    testing-metric, acc: 0.6747448979591837    testing-metric, auc: 0.8097667638483964    testing-metric, eer: 0.2729591836734694    testing-metric, ap: 0.8070118315587671    testing-metric, video_auc: 0.8479800083298625    testing-metric, acc_real:0.9336734693877551; acc_fake:0.41581632653061223
+2025-09-04 23:50:11,985 - INFO - dataset: avg    step: 719    testing-metric, acc: 0.6747448979591837    testing-metric, auc: 0.8097667638483964    testing-metric, eer: 0.2729591836734694    testing-metric, ap: 0.8070118315587671    testing-metric, video_auc: 0.8479800083298625    
+2025-09-04 23:50:11,986 - INFO - ===> Test Done!
+2025-09-04 23:50:26,952 - INFO - ===> Epoch[14] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8798937942523949 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8798937942523949 | 
+| UADFV: 0.8798937942523949 | 
+=============================================================================================!
+2025-09-04 23:50:26,953 - INFO - ===> Epoch[15] start!
+2025-09-04 23:50:26,955 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:50:45,173 - INFO - Iter: 735    training-loss, overall: 0.4059103727340698    
+2025-09-04 23:50:45,174 - INFO - Iter: 735    training-metric, acc: 0.75    training-metric, auc: 0.875    training-metric, eer: 0.25    training-metric, ap: 0.8875    
+2025-09-04 23:50:53,287 - INFO - ===> Test start!
+2025-09-04 23:50:53,290 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:51:38,293 - INFO - dataset: UADFV    step: 743    testing-loss, overall: 1.1708699464797974    
+2025-09-04 23:51:38,294 - INFO - dataset: UADFV    step: 743    testing-metric, acc: 0.6262755102040817    testing-metric, auc: 0.7958272594752186    testing-metric, eer: 0.2602040816326531    testing-metric, ap: 0.7921201752263807    testing-metric, video_auc: 0.8413161182840484    testing-metric, acc_real:0.9489795918367347; acc_fake:0.30357142857142855
+2025-09-04 23:51:38,295 - INFO - dataset: avg    step: 743    testing-metric, acc: 0.6262755102040817    testing-metric, auc: 0.7958272594752186    testing-metric, eer: 0.2602040816326531    testing-metric, ap: 0.7921201752263807    testing-metric, video_auc: 0.8413161182840484    
+2025-09-04 23:51:38,295 - INFO - ===> Test Done!
+2025-09-04 23:52:01,061 - INFO - ===> Test start!
+2025-09-04 23:52:01,065 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:52:46,489 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\ckpt_best.pth, current ckpt is 15+32
+2025-09-04 23:52:46,491 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\metric_dict_best.pickle
+2025-09-04 23:52:46,491 - INFO - dataset: UADFV    step: 767    testing-loss, overall: 0.5651087164878845    
+2025-09-04 23:52:46,493 - INFO - dataset: UADFV    step: 767    testing-metric, acc: 0.7525510204081632    testing-metric, auc: 0.8843450645564348    testing-metric, eer: 0.2066326530612245    testing-metric, ap: 0.8831393498962198    testing-metric, video_auc: 0.9171178675551853    testing-metric, acc_real:0.9209183673469388; acc_fake:0.5841836734693877
+2025-09-04 23:52:46,738 - INFO - Checkpoint saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\ckpt_best.pth, current ckpt is 15+32
+2025-09-04 23:52:46,740 - INFO - Metrics saved to ./logs/training/sbi_2025-09-04-23-11-01\test\avg\metric_dict_best.pickle
+2025-09-04 23:52:46,740 - INFO - dataset: avg    step: 767    testing-metric, acc: 0.7525510204081632    testing-metric, auc: 0.8843450645564348    testing-metric, eer: 0.2066326530612245    testing-metric, ap: 0.8831393498962198    testing-metric, video_auc: 0.9171178675551853    
+2025-09-04 23:52:46,741 - INFO - ===> Test Done!
+2025-09-04 23:53:03,065 - INFO - ===> Epoch[15] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8843450645564348 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8843450645564348 | 
+| UADFV: 0.8843450645564348 | 
+=============================================================================================!
+2025-09-04 23:53:03,065 - INFO - ===> Epoch[16] start!
+2025-09-04 23:53:03,067 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:53:21,455 - INFO - Iter: 784    training-loss, overall: 0.09002751857042313    
+2025-09-04 23:53:21,456 - INFO - Iter: 784    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:53:28,056 - INFO - ===> Test start!
+2025-09-04 23:53:28,060 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:54:14,895 - INFO - dataset: UADFV    step: 791    testing-loss, overall: 1.7195451259613037    
+2025-09-04 23:54:14,897 - INFO - dataset: UADFV    step: 791    testing-metric, acc: 0.5663265306122449    testing-metric, auc: 0.7363208038317368    testing-metric, eer: 0.33163265306122447    testing-metric, ap: 0.7385963341871818    testing-metric, video_auc: 0.7646813827571844    testing-metric, acc_real:0.9668367346938775; acc_fake:0.16581632653061223
+2025-09-04 23:54:14,898 - INFO - dataset: avg    step: 791    testing-metric, acc: 0.5663265306122449    testing-metric, auc: 0.7363208038317368    testing-metric, eer: 0.33163265306122447    testing-metric, ap: 0.7385963341871818    testing-metric, video_auc: 0.7646813827571844    
+2025-09-04 23:54:14,899 - INFO - ===> Test Done!
+2025-09-04 23:54:37,780 - INFO - ===> Test start!
+2025-09-04 23:54:37,784 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:55:22,957 - INFO - dataset: UADFV    step: 815    testing-loss, overall: 0.7310130000114441    
+2025-09-04 23:55:22,959 - INFO - dataset: UADFV    step: 815    testing-metric, acc: 0.7053571428571429    testing-metric, auc: 0.7715600270720533    testing-metric, eer: 0.30357142857142855    testing-metric, ap: 0.788356377942233    testing-metric, video_auc: 0.8154935443565181    testing-metric, acc_real:0.9030612244897959; acc_fake:0.5076530612244898
+2025-09-04 23:55:22,960 - INFO - dataset: avg    step: 815    testing-metric, acc: 0.7053571428571429    testing-metric, auc: 0.7715600270720533    testing-metric, eer: 0.30357142857142855    testing-metric, ap: 0.788356377942233    testing-metric, video_auc: 0.8154935443565181    
+2025-09-04 23:55:22,961 - INFO - ===> Test Done!
+2025-09-04 23:55:39,607 - INFO - ===> Epoch[16] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8843450645564348 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8843450645564348 | 
+| UADFV: 0.8843450645564348 | 
+=============================================================================================!
+2025-09-04 23:55:39,608 - INFO - ===> Epoch[17] start!
+2025-09-04 23:55:39,609 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:55:58,080 - INFO - Iter: 833    training-loss, overall: 0.408610999584198    
+2025-09-04 23:55:58,080 - INFO - Iter: 833    training-metric, acc: 0.75    training-metric, auc: 0.9375    training-metric, eer: 0.25    training-metric, ap: 0.95    
+2025-09-04 23:56:03,998 - INFO - ===> Test start!
+2025-09-04 23:56:04,002 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:56:49,249 - INFO - dataset: UADFV    step: 839    testing-loss, overall: 1.0959064960479736    
+2025-09-04 23:56:49,250 - INFO - dataset: UADFV    step: 839    testing-metric, acc: 0.6479591836734694    testing-metric, auc: 0.8034347667638484    testing-metric, eer: 0.2729591836734694    testing-metric, ap: 0.8195244825628925    testing-metric, video_auc: 0.8263223656809663    testing-metric, acc_real:0.9744897959183674; acc_fake:0.32142857142857145
+2025-09-04 23:56:49,251 - INFO - dataset: avg    step: 839    testing-metric, acc: 0.6479591836734694    testing-metric, auc: 0.8034347667638484    testing-metric, eer: 0.2729591836734694    testing-metric, ap: 0.8195244825628925    testing-metric, video_auc: 0.8263223656809663    
+2025-09-04 23:56:49,253 - INFO - ===> Test Done!
+2025-09-04 23:57:12,301 - INFO - ===> Test start!
+2025-09-04 23:57:12,304 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:57:57,571 - INFO - dataset: UADFV    step: 863    testing-loss, overall: 1.2917711734771729    
+2025-09-04 23:57:57,573 - INFO - dataset: UADFV    step: 863    testing-metric, acc: 0.6326530612244898    testing-metric, auc: 0.7872501041232819    testing-metric, eer: 0.2857142857142857    testing-metric, ap: 0.8045174084679463    testing-metric, video_auc: 0.8150770512286547    testing-metric, acc_real:0.9642857142857143; acc_fake:0.3010204081632653
+2025-09-04 23:57:57,573 - INFO - dataset: avg    step: 863    testing-metric, acc: 0.6326530612244898    testing-metric, auc: 0.7872501041232819    testing-metric, eer: 0.2857142857142857    testing-metric, ap: 0.8045174084679463    testing-metric, video_auc: 0.8150770512286547    
+2025-09-04 23:57:57,574 - INFO - ===> Test Done!
+2025-09-04 23:58:15,818 - INFO - ===> Epoch[17] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8843450645564348 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8843450645564348 | 
+| UADFV: 0.8843450645564348 | 
+=============================================================================================!
+2025-09-04 23:58:15,819 - INFO - ===> Epoch[18] start!
+2025-09-04 23:58:15,821 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-04 23:58:34,425 - INFO - Iter: 882    training-loss, overall: 0.15142439305782318    
+2025-09-04 23:58:34,426 - INFO - Iter: 882    training-metric, acc: 0.875    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-04 23:58:39,314 - INFO - ===> Test start!
+2025-09-04 23:58:39,317 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-04 23:59:24,540 - INFO - dataset: UADFV    step: 887    testing-loss, overall: 1.908823847770691    
+2025-09-04 23:59:24,541 - INFO - dataset: UADFV    step: 887    testing-metric, acc: 0.6122448979591837    testing-metric, auc: 0.73326218242399    testing-metric, eer: 0.33163265306122447    testing-metric, ap: 0.7718156897618913    testing-metric, video_auc: 0.7755102040816326    testing-metric, acc_real:0.9821428571428571; acc_fake:0.2423469387755102
+2025-09-04 23:59:24,542 - INFO - dataset: avg    step: 887    testing-metric, acc: 0.6122448979591837    testing-metric, auc: 0.73326218242399    testing-metric, eer: 0.33163265306122447    testing-metric, ap: 0.7718156897618913    testing-metric, video_auc: 0.7755102040816326    
+2025-09-04 23:59:24,543 - INFO - ===> Test Done!
+2025-09-04 23:59:47,561 - INFO - ===> Test start!
+2025-09-04 23:59:47,565 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-05 00:00:32,393 - INFO - dataset: UADFV    step: 911    testing-loss, overall: 0.8313437104225159    
+2025-09-05 00:00:32,394 - INFO - dataset: UADFV    step: 911    testing-metric, acc: 0.7525510204081632    testing-metric, auc: 0.8149924510620575    testing-metric, eer: 0.2372448979591837    testing-metric, ap: 0.8304997614429134    testing-metric, video_auc: 0.8546438983756769    testing-metric, acc_real:0.8724489795918368; acc_fake:0.6326530612244898
+2025-09-05 00:00:32,396 - INFO - dataset: avg    step: 911    testing-metric, acc: 0.7525510204081632    testing-metric, auc: 0.8149924510620575    testing-metric, eer: 0.2372448979591837    testing-metric, ap: 0.8304997614429134    testing-metric, video_auc: 0.8546438983756769    
+2025-09-05 00:00:32,397 - INFO - ===> Test Done!
+2025-09-05 00:00:50,876 - INFO - ===> Epoch[18] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8843450645564348 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8843450645564348 | 
+| UADFV: 0.8843450645564348 | 
+=============================================================================================!
+2025-09-05 00:00:50,877 - INFO - ===> Epoch[19] start!
+2025-09-05 00:00:50,878 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-05 00:01:08,991 - INFO - Iter: 931    training-loss, overall: 0.20198819041252136    
+2025-09-05 00:01:08,992 - INFO - Iter: 931    training-metric, acc: 0.875    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-05 00:01:12,860 - INFO - ===> Test start!
+2025-09-05 00:01:12,864 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-05 00:01:58,472 - INFO - dataset: UADFV    step: 935    testing-loss, overall: 0.8690567016601562    
+2025-09-05 00:01:58,473 - INFO - dataset: UADFV    step: 935    testing-metric, acc: 0.7270408163265306    testing-metric, auc: 0.7890852769679301    testing-metric, eer: 0.28316326530612246    testing-metric, ap: 0.8283561317273938    testing-metric, video_auc: 0.7917534360683048    testing-metric, acc_real:0.8392857142857143; acc_fake:0.6147959183673469
+2025-09-05 00:01:58,474 - INFO - dataset: avg    step: 935    testing-metric, acc: 0.7270408163265306    testing-metric, auc: 0.7890852769679301    testing-metric, eer: 0.28316326530612246    testing-metric, ap: 0.8283561317273938    testing-metric, video_auc: 0.7917534360683048    
+2025-09-05 00:01:58,475 - INFO - ===> Test Done!
+2025-09-05 00:02:21,307 - INFO - ===> Test start!
+2025-09-05 00:02:21,311 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-05 00:03:06,450 - INFO - dataset: UADFV    step: 959    testing-loss, overall: 1.4479340314865112    
+2025-09-05 00:03:06,451 - INFO - dataset: UADFV    step: 959    testing-metric, acc: 0.5829081632653061    testing-metric, auc: 0.7131663890045814    testing-metric, eer: 0.3392857142857143    testing-metric, ap: 0.729744352029005    testing-metric, video_auc: 0.7576009995835069    testing-metric, acc_real:0.9795918367346939; acc_fake:0.18622448979591838
+2025-09-05 00:03:06,453 - INFO - dataset: avg    step: 959    testing-metric, acc: 0.5829081632653061    testing-metric, auc: 0.7131663890045814    testing-metric, eer: 0.3392857142857143    testing-metric, ap: 0.729744352029005    testing-metric, video_auc: 0.7576009995835069    
+2025-09-05 00:03:06,453 - INFO - ===> Test Done!
+2025-09-05 00:03:26,350 - INFO - ===> Epoch[19] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8843450645564348 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8843450645564348 | 
+| UADFV: 0.8843450645564348 | 
+=============================================================================================!
+2025-09-05 00:03:26,350 - INFO - ===> Epoch[20] start!
+2025-09-05 00:03:26,352 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\train\UADFV\data_dict_train.pickle
+2025-09-05 00:03:44,454 - INFO - Iter: 980    training-loss, overall: 0.13067162036895752    
+2025-09-05 00:03:44,454 - INFO - Iter: 980    training-metric, acc: 1.0    training-metric, auc: 1.0    training-metric, eer: 0.0    training-metric, ap: 1.0    
+2025-09-05 00:03:47,346 - INFO - ===> Test start!
+2025-09-05 00:03:47,350 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-05 00:04:32,761 - INFO - dataset: UADFV    step: 983    testing-loss, overall: 1.7796871662139893    
+2025-09-05 00:04:32,763 - INFO - dataset: UADFV    step: 983    testing-metric, acc: 0.610969387755102    testing-metric, auc: 0.7656054768846315    testing-metric, eer: 0.29081632653061223    testing-metric, ap: 0.7883308046365545    testing-metric, video_auc: 0.8296543107038733    testing-metric, acc_real:0.9872448979591837; acc_fake:0.23469387755102042
+2025-09-05 00:04:32,764 - INFO - dataset: avg    step: 983    testing-metric, acc: 0.610969387755102    testing-metric, auc: 0.7656054768846315    testing-metric, eer: 0.29081632653061223    testing-metric, ap: 0.7883308046365545    testing-metric, video_auc: 0.8296543107038733    
+2025-09-05 00:04:32,764 - INFO - ===> Test Done!
+2025-09-05 00:04:55,772 - INFO - ===> Test start!
+2025-09-05 00:04:55,776 - INFO - data_dict saved to ./logs/training/sbi_2025-09-04-23-11-01\test\UADFV\data_dict_test.pickle
+2025-09-05 00:05:40,656 - INFO - dataset: UADFV    step: 1007    testing-loss, overall: 0.8504204154014587    
+2025-09-05 00:05:40,658 - INFO - dataset: UADFV    step: 1007    testing-metric, acc: 0.7066326530612245    testing-metric, auc: 0.843854123281966    testing-metric, eer: 0.22959183673469388    testing-metric, ap: 0.8269274533809656    testing-metric, video_auc: 0.8725531028738025    testing-metric, acc_real:0.9362244897959183; acc_fake:0.4770408163265306
+2025-09-05 00:05:40,659 - INFO - dataset: avg    step: 1007    testing-metric, acc: 0.7066326530612245    testing-metric, auc: 0.843854123281966    testing-metric, eer: 0.22959183673469388    testing-metric, ap: 0.8269274533809656    testing-metric, video_auc: 0.8725531028738025    
+2025-09-05 00:05:40,659 - INFO - ===> Test Done!
+2025-09-05 00:06:01,395 - INFO - ===> Epoch[20] end with testing auc: 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8843450645564348 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8843450645564348 | 
+| UADFV: 0.8843450645564348 | 
+=============================================================================================!
+2025-09-05 00:06:01,396 - INFO - Stop Training on best Testing metric 
+================================ Each dataset best metric ================================ 
+| UADFV:  auc=0.8843450645564348 | 
+============================================================================================= 
+================================== Average best metric ====================================== 
+| avg auc: 0.8843450645564348 | 
+| UADFV: 0.8843450645564348 | 
+=============================================================================================
